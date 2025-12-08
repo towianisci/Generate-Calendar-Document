@@ -13,6 +13,10 @@ The calendar includes markings for:
 
 If multiple events occur on the same date, they are listed below the date in smaller italic text, separated by new lines.
 
+## Sample Output
+
+A sample calendar for 2026 is included in the repository: [Calendar_2026_Writable.docx](Calendar_2026_Writable.docx)
+
 ## Dependencies
 
 - Python 3.x
