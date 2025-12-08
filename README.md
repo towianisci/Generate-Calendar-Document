@@ -20,7 +20,7 @@ A sample calendar for 2026 is included in the repository: [Calendar_2026_Writabl
 ## Dependencies
 
 - Python 3.x
-- `python-docx` library (install via `pip install python-docx`)
+- `python-docx` library (install via `pip install python-docx` or `python -m pip install python-docx`)
 
 The script will automatically check for the required libraries at runtime and provide installation instructions if they are missing.
 
@@ -75,7 +75,7 @@ Alternatively, run PyInstaller directly:
 ### Version 2.0 (December 7, 2025)
 - Added automatic dependency checking in the Python script; it now checks for `python-docx` at runtime and provides installation instructions if missing.
 - Updated the build script to automatically check for and install required dependencies (`python-docx` and `pyinstaller`) before compiling.
-- Improved build script reliability with proper path handling.
+- Improved build script reliability with proper path handling and use of `python -m pip` for better compatibility.
 - Added PowerShell build script (`build.ps1`) for Windows users.
 
 ### Version 1.8 (December 7, 2025)

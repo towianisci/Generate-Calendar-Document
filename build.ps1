@@ -5,13 +5,13 @@ try {
     python -c "import docx" 2>$null
 } catch {
     Write-Host "python-docx not found. Installing..."
-    pip install python-docx
+    python -m pip install python-docx
 }
 
 # Check and install pyinstaller if not present
 if (!(Get-Command pyinstaller -ErrorAction SilentlyContinue)) {
     Write-Host "PyInstaller not found. Installing..."
-    pip install pyinstaller
+    python -m pip install pyinstaller
 }
 
 # Build the executable

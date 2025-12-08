@@ -10,13 +10,13 @@ PYINSTALLER_PATH=~/Library/Python/3.9/bin/pyinstaller
 # Check and install python-docx if not present
 if ! $PYTHON_PATH -c "import docx" 2>/dev/null; then
     echo "python-docx not found. Installing..."
-    $PIP_PATH install python-docx
+    $PYTHON_PATH -m pip install python-docx
 fi
 
 # Check and install pyinstaller if not present
 if ! [ -x "$PYINSTALLER_PATH" ]; then
     echo "PyInstaller not found. Installing..."
-    $PIP_PATH install pyinstaller
+    $PYTHON_PATH -m pip install pyinstaller
 fi
 
 # Build the executable
