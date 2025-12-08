@@ -45,22 +45,22 @@ import sys
 import datetime
 from datetime import date, timedelta
 
-# Function to calculate the date of Easter for a given year
+# Function to calculate the date of Easter for a given year using the Meeus/Jones/Butcher algorithm
 def calculate_easter(year):
-    a = year % 19
-    b = year // 100
-    c = year % 100
-    d = b // 4
-    e = b % 4
-    f = (b + 8) // 25
-    g = (b - f + 1) // 3
-    h = (19 * a + b - d - g + 15) % 30
-    i = c // 4
-    k = c % 4
-    l = (32 + 2 * e + 2 * i - h - k) % 7
-    m = (a + 11 * h + 22 * l) // 451
-    month = (h + l - 7 * m + 114) // 31
-    day = ((h + l - 7 * m + 114) % 31) + 1
+    a = year % 19  # Golden number (position in 19-year Metonic cycle)
+    b = year // 100  # Century
+    c = year % 100  # Year within the century
+    d = b // 4  # Number of leap centuries
+    e = b % 4  # Remainder of century divided by 4
+    f = (b + 8) // 25  # Solar cycle adjustment
+    g = (b - f + 1) // 3  # Century correction factor
+    h = (19 * a + b - d - g + 15) % 30  # Epact (age of the Moon on Jan 1)
+    i = c // 4  # Number of leap years in the century
+    k = c % 4  # Remainder of year within century divided by 4
+    l = (32 + 2 * e + 2 * i - h - k) % 7  # Day of week for Paschal full moon
+    m = (a + 11 * h + 22 * l) // 451  # Correction factor for date bounds
+    month = (h + l - 7 * m + 114) // 31  # Month of Easter (3=March, 4=April)
+    day = ((h + l - 7 * m + 114) % 31) + 1  # Day of the month
     return date(year, month, day)
 
 # Function to get the first Sunday of a given month and year
