@@ -22,18 +22,19 @@ The script will automatically check for the required libraries at runtime and pr
 
 ## How to Compile
 
-To compile the script into a standalone executable using PyInstaller:
-
+### On macOS/Linux:
 1. Run the provided build script: `./build.sh`
 
-The build script will automatically check for and install the necessary dependencies (`python-docx` and `pyinstaller`) if they are not already present.
+### On Windows:
+1. Run the provided PowerShell script: `.\build.ps1`
+
+The build scripts will automatically check for and install the necessary dependencies (`python-docx` and `pyinstaller`) if they are not already present.
 
 This will generate a single executable file named `generate_calendar` (or `generate_calendar.exe` on Windows) in the `dist/` directory.
 
 Alternatively, run PyInstaller directly:
-```
-~/Library/Python/3.9/bin/pyinstaller --onefile generate_calendar.py
-```
+- On macOS/Linux: `pyinstaller --onefile generate_calendar.py`
+- On Windows: `pyinstaller --onefile generate_calendar.py`
 
 ## How to Use
 
@@ -71,6 +72,7 @@ Alternatively, run PyInstaller directly:
 - Added automatic dependency checking in the Python script; it now checks for `python-docx` at runtime and provides installation instructions if missing.
 - Updated the build script to automatically check for and install required dependencies (`python-docx` and `pyinstaller`) before compiling.
 - Improved build script reliability with proper path handling.
+- Added PowerShell build script (`build.ps1`) for Windows users.
 
 ### Version 1.8 (December 7, 2025)
 - Initial release with calendar generation features.
