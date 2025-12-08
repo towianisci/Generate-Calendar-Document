@@ -24,16 +24,22 @@ Output:
 Author: Edward L. Thomas
 Date: December 7, 2025
 Update: December 7, 2025
-Version: 1.8
+Version: 2.0
 """
 
-from docx import Document
-from docx.shared import Pt, Inches, RGBColor
-from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.enum.table import WD_TABLE_ALIGNMENT
-from docx.enum.section import WD_ORIENT
-from docx.oxml.ns import qn
-from docx.oxml import OxmlElement
+try:
+    from docx import Document
+    from docx.shared import Pt, Inches, RGBColor
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+    from docx.enum.table import WD_TABLE_ALIGNMENT
+    from docx.enum.section import WD_ORIENT
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+except ImportError:
+    print("Error: The 'python-docx' library is required but not installed.")
+    print("Please install it using: pip install python-docx")
+    sys.exit(1)
+
 import calendar
 import sys
 import datetime
