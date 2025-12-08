@@ -32,7 +32,7 @@ This will generate a single executable file named `generate_calendar` (or `gener
 
 Alternatively, run PyInstaller directly:
 ```
-/Users/edward/Library/Python/3.9/bin/pyinstaller --onefile generate_calendar.py
+~/Library/Python/3.9/bin/pyinstaller --onefile generate_calendar.py
 ```
 
 ## How to Use
