@@ -15,4 +15,4 @@ if (!(Get-Command pyinstaller -ErrorAction SilentlyContinue)) {
 }
 
 # Build the executable
-pyinstaller --onefile generate_calendar.py
+pyinstaller --onefile --hidden-import=docx generate_calendar.py

@@ -20,4 +20,4 @@ if ! [ -x "$PYINSTALLER_PATH" ]; then
 fi
 
 # Build the executable
-$PYINSTALLER_PATH --onefile generate_calendar.py
+$PYINSTALLER_PATH --onefile --hidden-import=docx generate_calendar.py
